@@ -1,0 +1,11 @@
+[package]
+name = "proofreader"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "proofreader"
+path = "src/main.rs"
+
+[dependencies]
+# Standard bare-metal dependencies will go here later

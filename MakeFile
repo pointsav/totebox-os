@@ -1,0 +1,39 @@
+# SB - Totebox OS | Native Foundry Orchestrator
+# ---------------------------------------------------------
+
+# Toolchain Paths
+MICROKIT_SDK ?= $(HOME)/Developer/totebox-os/sdk
+TARGET := x86_64-unknown-none
+BUILD_DIR := build
+CRATES := email-server people-db proofreader
+
+# Default Goal
+all: check_env compile bundle
+
+# 1. Environment Check: The "Google Way" to prevent drift
+check_env:
+	@command -v rustup >/dev/null 2>&1 || { echo "Error: rustup not found."; exit 1; }
+	@rustup target add $(TARGET)
+	@if [ ! -d "$(MICROKIT_SDK)" ]; then echo "Error: Microkit SDK not found in $(MICROKIT_SDK)"; exit 1; fi
+
+# 2. Compile: Building the three PDs in Rust
+compile:
+	@mkdir -p $(BUILD_DIR)
+	@for crate in $(CRATES); do \
+		echo "Building $$crate..."; \
+		cargo build --manifest-path crates/$$crate/Cargo.toml --target $(TARGET) --release; \
+		cp target/$(TARGET)/release/$$crate $(BUILD_DIR)/; \
+	done
+
+# 3. Bundle: Using Microkit to stitch the Tripartite OS together
+bundle:
+	@echo "Packaging Totebox OS Image..."
+	$(MICROKIT_SDK)/bin/microkit system/system.xml \
+		--search-path $(BUILD_DIR) \
+		--board gcp_x86_64 \
+		--output $(BUILD_DIR)/totebox_os.img \
+		--report $(BUILD_DIR)/report.txt
+
+# 4. Simulation: Testing the "First Boot"
+simulate:
+	qemu-system-x86_64 -machine q35 -nographic -kernel $(BUILD_DIR)/totebox_os.img

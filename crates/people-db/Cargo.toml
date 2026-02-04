@@ -1,0 +1,11 @@
+[package]
+name = "people-db"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "people-db"
+path = "src/main.rs"
+
+[dependencies]
+# Standard bare-metal dependencies will go here later

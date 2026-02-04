@@ -1,0 +1,12 @@
+[workspace]
+members = [
+    "crates/email-server",
+    "crates/people-db",
+    "crates/proofreader",
+]
+
+[profile.release]
+panic = "abort"
+lto = true          # Link Time Optimization for clean symbols
+opt-level = "s"     # Optimize for size
+debug = true        # Keep debug info for the kernel

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+    <protection_domain name="email_server" priority="100">
+        <program_image path="email-server" />
+    </protection_domain>
+
+    <protection_domain name="people_db" priority="100">
+        <program_image path="people-db" />
+    </protection_domain>
+
+    <protection_domain name="proofreader" priority="100">
+        <program_image path="proofreader" />
+    </protection_domain>
+</system>

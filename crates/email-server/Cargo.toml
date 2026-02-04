@@ -1,0 +1,11 @@
+[package]
+name = "email-server"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "email-server"
+path = "src/main.rs"
+
+[dependencies]
+# Standard bare-metal dependencies will go here later
