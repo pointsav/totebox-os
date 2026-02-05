@@ -1,21 +1,28 @@
-# PROPRIETARY LICENSE AGREEMENT
-**Copyright (c) 2026 PointSav Digital Systems AG. All Rights Reserved.**
+# POINTSAV COMMERCIAL SOURCE-AVAILABLE LICENSE (v1.0)
 
-This software is the confidential and proprietary information of **Woodfine Capital Projects Inc.** ("The Company").
+**Copyright (c) 2026 PointSav Digital Systems AG.**
+**All Rights Reserved.**
 
-## 1. OWNERSHIP & RESTRICTIONS
-This software, including all source code, orchestration logic, and linker configurations (the "Software"), is the exclusive property of the Company.
+This software is the proprietary intellectual property of PointSav Digital Systems AG ("Licensor").
 
-* **Authorized Use Only:** Usage is strictly limited to internal development and deployment operations within **Woodfine Capital Projects Inc.** and its controlled subsidiaries.
-* **No Redistribution:** You may not disclose, copy, distribute, or create derivative works of this Software without express written permission from an authorized officer of the Company.
-* **Sovereignty:** This Software is engineered for environments requiring absolute data sovereignty. Any deployment outside of Company-controlled infrastructure is a violation of this license.
+## 1. GRANT OF LICENSE
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to inspect, view, and compile the Software for **NON-COMMERCIAL, EDUCATIONAL, OR PERSONAL EVALUATION PURPOSES ONLY.**
 
-## 2. DISCLAIMER OF WARRANTY
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+## 2. COMMERCIAL USE RESTRICTION
+You may **NOT** use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software for any Commercial Purpose without a valid **PointSav Enterprise License Key**.
 
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+"Commercial Purpose" includes, but is not limited to:
+* Deploying the Software as a primary operating system for business workstations.
+* Using the Software to store or process proprietary corporate data.
+* Integrating the Software into a hardware product for resale.
 
----
+## 3. MICROVISOR & KERNEL ACKNOWLEDGEMENT
+This Software utilizes a modified version of the **seL4 Microkernel**.
+* The original seL4 kernel code remains subject to its respective open-source license (GPLv2).
+* The **PointSav Orchestration Layer**, **System Services**, and **Sovereign Supply Chain Logic** built on top of the kernel are proprietary to PointSav Digital Systems AG and are **NOT** open source.
 
-## 3. THIRD-PARTY COMPONENTS
-This project links against the **seL4 Microkernel** and the **Microkit Framework**. These components are governed by their respective Open Source licenses (GPLv2 and BSD-2-Clause). This Proprietary License applies solely to the orchestration logic and unique protection domain implementations developed by PointSav Digital Systems AG.
+## 4. THE "DIODE" ENFORCEMENT
+Totebox-OS is designed as a "Receiver" node. You are strictly prohibited from modifying the source code to enable "Upstream Execution" or transforming this OS into a "Transmitter." Any attempt to bypass the unidirectional control flow or the "Zero-Trust" isolation between the Developer and Employee environments voids all rights.
+
+## 5. DISCLAIMER
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
